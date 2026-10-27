@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up</title>
+
+    <!-- Font Awesome social icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            background: white;
+        }
+
+        .page-background {
+            width: 100%;
+            max-width: 565px;
+            padding: 20px 25px;
+            background: linear-gradient(120deg, #376b43, #a3a900);
+        }
+
+        .container {
+            min-height: 320px;
+            display: flex;
+            overflow: hidden;
+            border-radius: 22px;
+            box-shadow: 0 5px 15px #344b24;
+            background: white;
+        }
+
+        /* Left welcome panel */
+        .welcome-panel {
+            width: 48%;
+            background: #004b56;
+            color: white;
+            border-radius: 22px 48% 48% 22px / 22px 30% 30% 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .welcome-panel h1 {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .welcome-panel p {
+            font-size: 11px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .sign-in-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 7px 28px;
+            font-size: 9px;
+            cursor: pointer;
+        }
+
+        /* Right registration panel */
+        .signup-panel {
+            flex: 1;
+            padding: 32px 25px;
+            text-align: center;
+        }
+
+        .signup-panel h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .social-links a {
+            width: 27px;
+            height: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #91b6be;
+            border-radius: 7px;
+            color: #315e68;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .signup-panel h3 {
+            font-size: 21px;
+            margin-bottom: 4px;
+        }
+
+        .signup-panel .description {
+            font-size: 9px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .signup-panel input {
+            width: 100%;
+            display: block;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: none;
+            background: #ccc;
+            font-size: 10px;
+            outline: none;
+        }
+
+        .signup-btn {
+            width: 60%;
+            padding: 8px;
+            margin-top: 1px;
+            border: none;
+            background: #c4c900;
+            color: white;
+            font-size: 9px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 550px) {
+            .page-background {
+                padding: 12px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .welcome-panel {
+                width: 100%;
+                min-height: 200px;
+                border-radius: 22px 22px 45% 15%;
+            }
+
+            .signup-panel {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page-background">
+
+        <div class="container">
+
+            <!-- Welcome Back -->
+            <section class="welcome-panel">
+                <h1>Welcome Back!</h1>
+
+                <p>
+                    Provide your personal details to use all<br>
+                    features
+                </p>
+
+                <button type="button" class="sign-in-btn">
+                    SIGN IN
+                </button>
+            </section>
+
+            <!-- Sign Up Form -->
+            <section class="signup-panel">
+
+                <h2>Register With</h2>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <h3>OR</h3>
+
+                <p class="description">
+                    Fill Out The Following Info For Registration
+                </p>
+
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+
+                    <button type="submit" class="signup-btn">
+                        SIGN UP
+                    </button>
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
