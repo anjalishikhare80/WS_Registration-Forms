@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Championship Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 35px 20px;
+        }
+
+        .registration-container {
+            max-width: 585px;
+            margin: 0 auto;
+            padding: 28px 23px 14px;
+            background: linear-gradient(
+                150deg,
+                #dfa5f3,
+                #c5dafa 48%,
+                #a0ffff
+            );
+            border-top: 1px solid #555;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: normal;
+            color: #66618b;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 21px;
+        }
+
+        .form-group label,
+        .verification-label {
+            display: block;
+            color: #686889;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .required {
+            color: #e74766;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            height: 34px;
+            padding: 8px;
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 3px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #3569d4;
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 11px;
+        }
+
+        .name-fields input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .verification {
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 18px;
+        }
+
+        .verification-label {
+            text-align: left;
+            width: fit-content;
+            margin: 0 auto 8px;
+        }
+
+        .captcha-box {
+            width: 224px;
+            min-height: 60px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #fafafa;
+            border: 1px solid #d5d5d5;
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .robot-check {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #333;
+            font-size: 11px;
+        }
+
+        .robot-check input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .captcha-logo {
+            color: #555;
+            font-size: 9px;
+            text-align: center;
+        }
+
+        .captcha-logo i {
+            color: #3569c8;
+            font-size: 22px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .captcha-logo small {
+            font-size: 7px;
+        }
+
+        .submit-button {
+            display: block;
+            margin: 0 auto;
+            padding: 12px 23px;
+            background: #1854c9;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #1043a7;
+        }
+
+        .submit-button span {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .registration-container {
+                padding: 22px 15px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            .name-fields {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="registration-container">
+
+        <h1>School Championship Registration Form</h1>
+
+        <form>
+
+            <!-- School Name -->
+            <div class="form-group">
+                <label for="school">
+                    School name:<span class="required">*</span>
+                </label>
+
+                <input type="text" id="school" name="school" required>
+            </div>
+
+            <!-- Student Name -->
+            <div class="form-group">
+                <label>
+                    Schooler name:<span class="required">*</span>
+                </label>
+
+                <div class="name-fields">
+                    <input type="text" name="studentFirstName"
+                           placeholder="First" aria-label="Student first name" required>
+
+                    <input type="text" name="studentLastName"
+                           placeholder="Last" aria-label="Student last name" required>
+                </div>
+            </div>
+
+            <!-- Parent Name -->
+            <div class="form-group">
+                <label>
+                    Parent name:<span class="required">*</span>
+                </label>
+
+                <div class="name-fields">
+                    <input type="text" name="parentFirstName"
+                           placeholder="First" aria-label="Parent first name" required>
+
+                    <input type="text" name="parentLastName"
+                           placeholder="Last" aria-label="Parent last name" required>
+                </div>
+            </div>
+
+            <!-- Parent Phone -->
+            <div class="form-group">
+                <label for="phone">
+                    Parent phone:<span class="required">*</span>
+                </label>
+
+                <input type="tel" id="phone" name="phone"
+                       placeholder="### ### ####" required>
+            </div>
+
+            <!-- Parent Email -->
+            <div class="form-group">
+                <label for="email">
+                    Parent email:<span class="required">*</span>
+                </label>
+
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Preferred Sport -->
+            <div class="form-group">
+                <label for="sport">
+                    Preferred sport:<span class="required">*</span>
+                </label>
+
+                <select id="sport" name="sport" required>
+                    <option value=""></option>
+                    <option value="football">Football</option>
+                    <option value="cricket">Cricket</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="badminton">Badminton</option>
+                    <option value="athletics">Athletics</option>
+                    <option value="volleyball">Volleyball</option>
+                </select>
+            </div>
+
+            <!-- Verification -->
+            <div class="verification">
+
+                <label class="verification-label">
+                    Verification<span class="required">*</span>
+                </label>
+
+                <div class="captcha-box">
+
+                    <label class="robot-check">
+                        <input type="checkbox" required>
+                        I'm not a robot
+                    </label>
+
+                    <div class="captcha-logo">
+                        <i>↻</i>
+                        reCAPTCHA
+                        <br>
+                        <small>Privacy - Terms</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-button">
+                <span>▶</span> Submit
+            </button>
+
+        </form>
+
+    </main>
+
+</body>
+</html>
